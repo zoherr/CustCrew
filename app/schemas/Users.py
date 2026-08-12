@@ -11,3 +11,11 @@ class UserCreate(BaseModel):
         if value.strip() == "":
             raise ValueError("Name cannot be blank")
         return value
+
+class UserLogin(BaseModel):
+    email:str = EmailStr
+    password:str
+
+class User(BaseModel):
+    name:str
+    email:str
